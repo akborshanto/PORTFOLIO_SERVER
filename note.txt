@@ -1,0 +1,60 @@
+1.modle
+2.view
+3.controller
+
+--------------------- ALL ROUTER----------------------------------------------
+routesFolder/user.route.js
+-------------------------
+4.route.js ---> 
+->const express= require('express')
+-> const router=express.Router()
+->const { getUser ,postUser} = require('../controller/userContorlelr');
+-> all router for example _> router.get,router.post,route.put,route.delete
+->export router  -> module.exports=router;
+
+------------------------
+{i can use now route.js file in index.js}
+          index.js
+-------------------------
+->.const userRouter= require('./routes/user.route')
+->.app.use(userRouter)
+
+
+---------------------------- CONTROLLER-------------------------------------------------------
+------------------------
+
+{all logic will stay in controller folder}
+           controller/user.controller.js
+-------------------------
+->exports.getUser=(req, res) => {
+    res.send(htmlForm);
+  }
+ -> exports.postUser=(req,res)=>{
+
+  
+    const name=req.body.name;
+    const roll= Number(req.body.roll)
+    const user={name,roll}
+    //users.push(user)
+    
+    /* errir */
+    //res.send(users)
+    
+    
+    }
+    
+    ---------------------------- MODEL/DATABASE-------------------------------------------------------
+    user.modelDatabase.js
+------------------------
+->let users = [
+  { name: "akbor", roll: 21 },
+  { name: "saiful", roll: 421 },
+  { name: "maful", roll: 421 },
+  { name: "jasdf", roll: 241 },
+  { name: "jasdf", roll: 241 },
+  { name: "jasdf", roll: 241 },
+  { name: "jasdf", roll: 241 },
+];
+  ->module.exports=users;
+      ---------------------------- VIEW/FRONTEND-------------------------------------------------------
+  
